@@ -1,0 +1,42 @@
+
+<ons-page ng-controller="TopPageCtrl">
+    <ons-toolbar>
+        <div class="center">Technoco路線</div>
+    </ons-toolbar>
+
+    <ons-list modifier="inset" style="margin: 10px">
+        <ons-list-item class="list-item-container" ng-repeat="(uuid, beacon) in beacons">
+            <ons-row>
+                <ons-col width="70px" height="70px">
+                    <img ng-src="{{beacon.icon}}" class="top-page-icon">
+            </ons-col>
+                
+                <ons-col>
+                    <div class="top-page-name">{{beacon.name}}</div>
+                    <div class="top-page-proximity">{{beacon.proximity}}</div>
+                    <div class="top-page-proximity">{{beacon.rssi}} dBm</div>
+                 </ons-col>
+
+                <ons-col>
+                    <img class="{{beacon.name}} location top-page-icon" hidden ng-src="img/now.jpg">
+                </ons-col>
+
+                <ons-col>
+                    <ons-button
+                        ng-click="onClick('START')">
+                        START
+                    </ons-button>
+
+                    <div ng-show="false" class="number">{{beacon.number}}</div>
+                    <ons-button
+                        ng-click="onClick('END')">
+                        END
+                    </ons-button>
+                </ons-col>
+            </ons-row>
+        </ons-list-item>
+    </ons-list>
+
+    
+    
+</ons-page>
